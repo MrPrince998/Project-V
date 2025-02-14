@@ -1,0 +1,135 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f7c8d8, #e9a9c8, #f0c5f2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #333;
+}
+
+/* Main Container */
+.main-container {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Image Container */
+.img-container img {
+  max-width: 300px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph (Valentine's Question) */
+p {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #ff4d6d;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+/* Enhanced Button Styles */
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  background-color: #ff4d6d;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1); /* Slightly enlarge */
+  background-color: #ff1c3b; /* Darken the background */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add stronger shadow */
+}
+
+button:active {
+  transform: scale(1); /* Press the button inwards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighten the shadow */
+}
+
+button.clicked {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Hearts Container */
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Falling Hearts Animation */
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  animation: fall 5s linear infinite;
+  z-index: 10000;
+  opacity: 0.7;
+}
+
+.heart-content {
+  color: #ff4d6d;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Heart Falling Animation */
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(50vh) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) scale(1.5);
+  }
+}
